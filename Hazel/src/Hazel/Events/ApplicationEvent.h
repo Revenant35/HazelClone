@@ -2,7 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
 #include <spdlog/fmt/ostr.h>
 #include <spdlog/spdlog.h>
 
