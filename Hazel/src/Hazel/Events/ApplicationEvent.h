@@ -10,7 +10,7 @@ namespace Hazel {
     class HAZEL_API WindowResizeEvent : public Event
     {
     public:
-        WindowResizeEvent(const unsigned int & width, const unsigned int & height)
+        WindowResizeEvent(const unsigned int width, const unsigned int height)
             : m_Width(width), m_Height(height) {}
 
         [[nodiscard]] unsigned int GetWidth() const { return m_Width; }

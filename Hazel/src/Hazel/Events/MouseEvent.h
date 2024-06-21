@@ -7,7 +7,7 @@ namespace Hazel {
 	class HAZEL_API MouseMovedEvent : public Event
 	{
 	public:
-		MouseMovedEvent(const float & x, const float & y)
+		MouseMovedEvent(const float x, const float y)
 			: m_MouseX(x), m_MouseY(y) {}
 
 		[[nodiscard]] float GetX() const { return m_MouseX; }
@@ -29,7 +29,7 @@ namespace Hazel {
 	class HAZEL_API MouseScrolledEvent : public Event
 	{
 	public:
-		MouseScrolledEvent(const float & xOffset, const float & yOffset)
+		MouseScrolledEvent(const float xOffset, const float yOffset)
 			: m_XOffset(xOffset), m_YOffset(yOffset) {}
 
 		[[nodiscard]] float GetXOffset() const { return m_XOffset; }
@@ -64,7 +64,7 @@ namespace Hazel {
 	class HAZEL_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonPressedEvent(const int & button)
+		MouseButtonPressedEvent(const int button)
 			: MouseButtonEvent(button) {}
 
 		[[nodiscard]] std::string ToString() const override
@@ -80,7 +80,7 @@ namespace Hazel {
 	class HAZEL_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonReleasedEvent(int button)
+		MouseButtonReleasedEvent(const int button)
 			: MouseButtonEvent(button) {}
 
 		[[nodiscard]] std::string ToString() const override
