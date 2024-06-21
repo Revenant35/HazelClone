@@ -26,6 +26,38 @@ namespace Hazel {
 		float m_MouseX, m_MouseY;
 	};
 
+	class HAZEL_API MouseEnteredEvent : public Event
+	{
+	public:
+		MouseEnteredEvent() {}
+		
+		[[nodiscard]] std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseEnteredEvent: ";
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(MouseEntered)
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	};
+
+	class HAZEL_API MouseLeftEvent : public Event
+	{
+	public:
+		MouseLeftEvent() {}
+		
+		[[nodiscard]] std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "MouseLeftEvent: ";
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(MouseLeft)
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+	};
+
 	class HAZEL_API MouseScrolledEvent : public Event
 	{
 	public:
