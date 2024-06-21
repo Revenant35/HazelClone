@@ -4,30 +4,25 @@
 #include "Hazel/Events/ApplicationEvent.h"
 #include "Hazel/Log.h"
 
-namespace Hazel {
+namespace Hazel
+{
 
-	Application::Application()
-	{
-	}
+    Application::Application()
+    {
+        m_Window = std::unique_ptr<Window>(Window::Create());
+    }
 
 
-	Application::~Application()
-	{
-	}
+    Application::~Application()
+    {
+    }
 
-	void Application::Run()
-	{
-		const WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
-		{
-			HZ_TRACE(e.ToString());
-		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			HZ_TRACE(e.ToString());
-		}
-
-		while (true);
-	}
+    void Application::Run()
+    {
+        while (m_Running)
+        {
+            m_Window->OnUpdate();
+        }
+    }
 
 }

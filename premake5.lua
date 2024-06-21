@@ -56,7 +56,8 @@ project "Hazel"
         defines
         {
             "HZ_PLATFORM_WINDOWS",
-            "HZ_BUILD_DLL"
+            "HZ_BUILD_DLL",
+            "HZ_ENABLE_ASSERTS"
         }
 
         postbuildcommands
@@ -66,15 +67,22 @@ project "Hazel"
 
     filter "configurations:Debug"
         defines "HZ_DEBUG"
-        symbols "On"
+        runtime "Debug"
+        symbols "on"
+        staticruntime "off"
 
     filter "configurations:Release"
         defines "HZ_RELEASE"
-        optimize "On"
+        runtime "Release"
+        optimize "speed"
+        staticruntime "off"
 
     filter "configurations:Dist"
         defines "HZ_DIST"
-        optimize "On"
+        runtime "Release"
+        optimize "speed"
+        symbols "off"
+        staticruntime "off"
 
 project "Sandbox"
     location "Sandbox"
