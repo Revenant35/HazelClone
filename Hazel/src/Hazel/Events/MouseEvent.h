@@ -34,7 +34,7 @@ namespace Hazel {
 		[[nodiscard]] std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseEnteredEvent: ";
+			ss << "MouseEnteredEvent";
 			return ss.str();
 		}
 
@@ -50,7 +50,7 @@ namespace Hazel {
 		[[nodiscard]] std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseLeftEvent: ";
+			ss << "MouseLeftEvent";
 			return ss.str();
 		}
 
