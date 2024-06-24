@@ -118,15 +118,22 @@ project "Sandbox"
         {
             "HZ_PLATFORM_WINDOWS"
         }
-
+    
     filter "configurations:Debug"
         defines "HZ_DEBUG"
-        symbols "On"
-
+        runtime "Debug"
+        symbols "on"
+        staticruntime "off"
+        
     filter "configurations:Release"
         defines "HZ_RELEASE"
-        optimize "On"
-
+        runtime "Release"
+        optimize "speed"
+        staticruntime "off"
+        
     filter "configurations:Dist"
         defines "HZ_DIST"
-        optimize "On"
+        runtime "Release"
+        optimize "speed"
+        symbols "off"
+        staticruntime "off"

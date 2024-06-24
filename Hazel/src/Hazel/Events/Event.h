@@ -51,6 +51,9 @@ namespace Hazel {
 		{
 			return GetCategoryFlags() & category;
 		}
+
+		[[nodiscard]] bool IsHandled() const { return m_Handled; }
+		
 	protected:
 		bool m_Handled = false;
 	};
