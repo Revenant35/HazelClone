@@ -2,3 +2,5 @@
 /.vs/
 /bin/
 /bin-int/
+
+/Sandbox/imgui.ini

@@ -17,7 +17,7 @@ namespace Hazel {
 		None = 0,
 		AppTick, AppUpdate, AppRender,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled, MouseEntered, MouseLeft
 	};
 
