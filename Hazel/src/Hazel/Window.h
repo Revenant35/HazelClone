@@ -13,10 +13,10 @@ namespace Hazel
         unsigned int Width;
         unsigned int Height;
 
-        WindowProps(const std::string & title = "Hazel Engine",
+        WindowProps(std::string title = "Hazel Engine",
                     const unsigned int width = 1280,
                     const unsigned int height = 720)
-            : Title(title), Width(width), Height(height)
+            : Title(std::move(title)), Width(width), Height(height)
         {
         }
     };
@@ -38,6 +38,8 @@ namespace Hazel
         virtual void SetVSync(bool enabled) = 0;
         virtual bool IsVSync() const = 0;
 
+        virtual void* GetNativeWindow() const = 0;
+        
         static Window * Create(const WindowProps & props = WindowProps());
     };
     
